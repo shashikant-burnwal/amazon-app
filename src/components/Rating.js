@@ -38,7 +38,7 @@ export default function Rating (props){
 
             <span><i 
                 className={ 
-                    rating==5 ? "fa fa-star"
+                    rating===5 ? "fa fa-star"
                     : rating>=4.5
                     ? 'fa fa-star-half-o'
                     : 'fa fa-star-o'}>
