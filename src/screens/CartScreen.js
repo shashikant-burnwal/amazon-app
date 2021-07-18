@@ -10,6 +10,8 @@ const CartScreen = (props) => {
     const qty = props.location.search ? Number (props.location.search.split("=")[1])
     :1;
 
+    console.log ("Product id "+ productId);
+
     const cart = useSelector ((state)=> state.cart);
 
     const {cartItems} = cart;

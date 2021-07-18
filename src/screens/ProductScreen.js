@@ -20,8 +20,6 @@ export default function ProductScreen(props) {
   const { loading, error, product} = productDetails; 
 
 
-
-
   useEffect (()=>{
     dispatch (detailsProduct(productId));
   },[dispatch, productId]);
@@ -35,10 +33,12 @@ export default function ProductScreen(props) {
 
 
     <div>
-          { loading ? <LoadingBox></LoadingBox>
-          : error ? <MessageBox variant="danger">{error}</MessageBox>
-          :       <div>
-                        <Link to="/">Back to result</Link>
+
+          { loading ? (<LoadingBox></LoadingBox>)
+          : error ? (<MessageBox variant="danger">{error}</MessageBox>)
+          :      ( <div>
+                        <Link to="/">Back to Result</Link>
+              
                         <div className="row top">
                           <div className="col-2">
                             <img className="large" src={product.image} alt={product.name}></img>
@@ -127,12 +127,12 @@ export default function ProductScreen(props) {
                           </div>
                         </div>
                       </div>  
+                    )
 
             }
 
 
-      </div>
-
+    </div>
 
 
   );
